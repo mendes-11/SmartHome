@@ -1,20 +1,23 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import { UtilsContext } from "./src/Contexts/Contex";
+import { useState } from "react";
+import Morador from "./src/Pages/Morador";
+
+
 
 export default function App() {
+  const [utils, setUtils] = useState({});
+
+  const Stack = createStackNavigator();
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <UtilsContext.Provider value={{ utils, setUtils }}>
+        <Stack.Navigator>
+          <Stack.Screen name="Morador" component={Morador} />
+        </Stack.Navigator>
+      </UtilsContext.Provider>
+    </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
