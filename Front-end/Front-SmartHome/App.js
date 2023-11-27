@@ -5,6 +5,8 @@ import { useState } from "react";
 import Morador from "./src/Pages/Morador";
 import Visita from "./src/Pages/Visita";
 import Funcionario from "./src/Pages/Funcionario";
+import Home from "./src/Pages/Home";
+
 
 
 
@@ -19,6 +21,7 @@ export default function App() {
     <NavigationContainer>
       <UtilsContext.Provider value={{ utils, setUtils }}>
         <Stack.Navigator>
+          <Stack.Screen name="Home" component={Home}/>
           <Stack.Screen name="Funcionario" component={Funcionario}/>
           <Stack.Screen name="Visita" component={Visita}/>
           <Stack.Screen name="Morador" component={Morador}/>

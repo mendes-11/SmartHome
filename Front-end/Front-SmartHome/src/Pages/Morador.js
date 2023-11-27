@@ -13,22 +13,20 @@ import CadastroStyle from "../Styles/CadastroStyles";
 
 const RegisterResident = () => {
   const [nome, setNome] = useState("");
-  const [dataNascimento, setDataNascimento] = useState(""); // Mudança de idade para dataNascimento
+  const [dataNascimento, setDataNascimento] = useState(""); 
   const [sexo, setSexo] = useState("");
   const [email, setEmail] = useState("");
   const [cpf, setCPF] = useState("");
   const [bloco, setBloco] = useState("");
-  const [apartamento, setApartamento] = useState(""); // Mudança de apto para apartamento
-  const [valorApartamento, setValorApartamento] = useState(""); // Mudança de valor para valorApartamento
-  const [numeroVagaEstacionamento, setNumeroVagaEstacionamento] = useState(""); // Mudança de vaga para numeroVagaEstacionamento
+  const [apartamento, setApartamento] = useState(""); 
+  const [valorApartamento, setValorApartamento] = useState(""); 
+  const [numeroVagaEstacionamento, setNumeroVagaEstacionamento] = useState("");
   const [senha, setSenha] = useState("");
-  const [confirmarSenha, setConfirmarSenha] = useState(""); // Mudança de senha2 para confirmarSenha
+  const [confirmarSenha, setConfirmarSenha] = useState(""); 
 
   const enviarDados = async () => {
-    // Formatação da data de nascimento
-    const dataFormatada = dataNascimento.split('/').reverse().join('-'); // Ajustar conforme o formato de entrada
-
-    // Conversões numéricas
+  
+    const dataFormatada = dataNascimento.split('/').reverse().join('-'); 
     const blocoNumerico = Number(bloco);
     const apartamentoNumerico = Number(apartamento);
     const valorApartamentoNumerico = Number(valorApartamento);
@@ -53,10 +51,6 @@ const RegisterResident = () => {
     }
   };
 
-  const handleGoBack = () => {
-    // Implemente a lógica para voltar aqui
-
-  };
 
   return (
     <KeyboardAvoidingView
@@ -137,7 +131,7 @@ const RegisterResident = () => {
     style={CadastroStyle.input}
   />
   <Button title="Cadastrar" onPress={enviarDados} />
-  <Button title="Voltar" onPress={handleGoBack} />
+  <Button title="Voltar" onPress={() => props.navigation.navigate("Visita")} />
 </ScrollView>
 
     </KeyboardAvoidingView>
