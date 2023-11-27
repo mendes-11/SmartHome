@@ -11,30 +11,24 @@ import {
 import axios from 'axios';
 import CadastroStyle from "../Styles/CadastroStyles";
 
-const RegisterResident = () => {
+const RegisterVisit = (props) => {
   const [nome, setNome] = useState("");
-  const [dataNascimento, setDataNascimento] = useState(""); // Mudança de idade para dataNascimento
+  const [dataNascimento, setDataNascimento] = useState(""); 
   const [sexo, setSexo] = useState("");
   const [email, setEmail] = useState("");
   const [cpf, setCPF] = useState("");
   const [bloco, setBloco] = useState("");
-  const [apartamento, setApartamento] = useState(""); // Mudança de apto para apartamento
-  const [valorApartamento, setValorApartamento] = useState(""); // Mudança de valor para valorApartamento
-  const [numeroVagaEstacionamento, setNumeroVagaEstacionamento] = useState(""); // Mudança de vaga para numeroVagaEstacionamento
-  const [senha, setSenha] = useState("");
-  const [confirmarSenha, setConfirmarSenha] = useState(""); // Mudança de senha2 para confirmarSenha
+  const [apartamento, setApartamento] = useState("");
+  const [numeroVagaEstacionamento, setNumeroVagaEstacionamento] = useState(""); 
 
   const enviarDados = async () => {
-    // Formatação da data de nascimento
-    const dataFormatada = dataNascimento.split('/').reverse().join('-'); // Ajustar conforme o formato de entrada
 
-    // Conversões numéricas
+    const dataFormatada = dataNascimento.split('/').reverse().join('-');
     const blocoNumerico = Number(bloco);
     const apartamentoNumerico = Number(apartamento);
-    const valorApartamentoNumerico = Number(valorApartamento);
 
     try {
-      const response = await axios.post("http://localhost:8080/morador", {
+      const response = await axios.post("http://localhost:8080/visita", {
         nome,
         dataNascimento: dataFormatada,
         sexo,
@@ -42,9 +36,7 @@ const RegisterResident = () => {
         cpf,
         bloco: blocoNumerico,
         apartamento: apartamentoNumerico,
-        valorApartamento: valorApartamentoNumerico,
-        numeroVagaEstacionamento,
-        senha
+        numeroVagaEstacionamento
       });
     }
        catch (error) {
@@ -53,10 +45,7 @@ const RegisterResident = () => {
     }
   };
 
-  const handleGoBack = () => {
-    // Implemente a lógica para voltar aqui
 
-  };
 
   return (
     <KeyboardAvoidingView
@@ -110,38 +99,18 @@ const RegisterResident = () => {
   </View>
   <View style={CadastroStyle.inlineGroup}>
     <TextInput
-      placeholder="Valor do Apto"
-      value={valorApartamento} 
-      onChangeText={(e) => setValorApartamento(e)}
-      style={[CadastroStyle.input, CadastroStyle.inlineInput]}
-    />
-    <TextInput
       placeholder="Número da Vaga"
       value={numeroVagaEstacionamento} 
       onChangeText={(e) => setNumeroVagaEstacionamento(e)}
       style={[CadastroStyle.input, CadastroStyle.inlineInput]}
     />
   </View>
-  <TextInput
-    placeholder="Senha"
-    value={senha} 
-    onChangeText={(e) => setSenha(e)}
-    secureTextEntry
-    style={CadastroStyle.input}
-  />
-  <TextInput
-    placeholder="Confirmar Senha"
-    value={confirmarSenha} 
-    onChangeText={(e) => setConfirmarSenha(e)}
-    secureTextEntry
-    style={CadastroStyle.input}
-  />
   <Button title="Cadastrar" onPress={enviarDados} />
-  <Button title="Voltar" onPress={handleGoBack} />
+  <Button title="Voltar" onPress={() => props.navigation.navigate("Morador")} />
 </ScrollView>
 
     </KeyboardAvoidingView>
   );
 };
 
-export default RegisterResident;
+export default RegisterVisit;

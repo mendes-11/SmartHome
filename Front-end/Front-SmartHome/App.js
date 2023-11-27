@@ -3,6 +3,10 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { UtilsContext } from "./src/Contexts/Contex";
 import { useState } from "react";
 import Morador from "./src/Pages/Morador";
+import Visita from "./src/Pages/Visita";
+import Funcionario from "./src/Pages/Funcionario";
+
+
 
 
 
@@ -15,7 +19,9 @@ export default function App() {
     <NavigationContainer>
       <UtilsContext.Provider value={{ utils, setUtils }}>
         <Stack.Navigator>
-          <Stack.Screen name="Morador" component={Morador} />
+          <Stack.Screen name="Funcionario" component={Funcionario}/>
+          <Stack.Screen name="Visita" component={Visita}/>
+          <Stack.Screen name="Morador" component={Morador}/>
         </Stack.Navigator>
       </UtilsContext.Provider>
     </NavigationContainer>

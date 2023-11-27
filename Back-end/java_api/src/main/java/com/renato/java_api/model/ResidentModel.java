@@ -24,9 +24,10 @@ public class ResidentModel {
     private short apartamento;
     private Double valorApartamento;
     private String numeroVagaEstacionamento;
+    private String senha;
 
     public ResidentModel(String nome, Date dataNascimento, String sexo, String email, String cpf, 
-    short bloco, short apartamento, Double valorApartamento, String NumeroVagaEstacionamento) {
+    short bloco, short apartamento, Double valorApartamento, String NumeroVagaEstacionamento, String senha) {
 
         this.nome = nome;
         this.dataNascimento = dataNascimento;
@@ -37,6 +38,7 @@ public class ResidentModel {
         this.apartamento = apartamento;
         this.valorApartamento = valorApartamento;
         this.numeroVagaEstacionamento = NumeroVagaEstacionamento;
+        this.senha = senha;
     }
 
     public ResidentModel(String nome, String sexo){

@@ -18,7 +18,7 @@ import com.renato.java_api.service.VisitorService;
 
 
 @RestController
-@RequestMapping("/visitante")
+@RequestMapping("/visita")
 public class VisitorController {
 
     @Autowired
