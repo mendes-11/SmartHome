@@ -6,6 +6,7 @@ import Morador from "./src/Pages/Morador";
 import Visita from "./src/Pages/Visita";
 import Funcionario from "./src/Pages/Funcionario";
 import Home from "./src/Pages/Home";
+import Login from "./src/Pages/Login";
 
 
 
@@ -21,6 +22,7 @@ export default function App() {
     <NavigationContainer>
       <UtilsContext.Provider value={{ utils, setUtils }}>
         <Stack.Navigator>
+          <Stack.Screen name="Login" component={Login}/>
           <Stack.Screen name="Home" component={Home}/>
           <Stack.Screen name="Funcionario" component={Funcionario}/>
           <Stack.Screen name="Visita" component={Visita}/>
