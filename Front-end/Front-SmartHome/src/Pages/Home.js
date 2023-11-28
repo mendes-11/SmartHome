@@ -8,6 +8,19 @@ const Home = () => {
   const [visitantes, setVisitantes] = useState([]);
   const [funcionario, setFuncionario] = useState([]);
 
+  function goToResident() {
+
+    props.navigation.navigate("Morador")
+  }
+  function goToVisit() {
+
+    props.navigation.navigate("Visita")
+  }
+  function goToEmployee() {
+
+    props.navigation.navigate("Funcionario")
+  }
+
   useEffect(() => {
     const buscarDados = async () => {
       try {
@@ -26,15 +39,18 @@ const Home = () => {
 
     buscarDados();
   }, []);
+ 
 
   return (
     <ScrollView style={CardStyle.container}>
+
       <View style={CardStyle.container}>
         <Text style={CardStyle.titulo}>Moradores</Text>
-        <TouchableOpacity style={CardStyle.botao}>
+        <TouchableOpacity style={CardStyle.botao} onPress={() => goToResident()}>
           <Text style={CardStyle.botaoLetra}>Cadastrar</Text>
         </TouchableOpacity>
       </View>
+
       {moradores.length > 0 ? (
         moradores.map((morador, index) => (
           <View style={CardStyle.card}>
@@ -51,7 +67,7 @@ const Home = () => {
 
       <View style={CardStyle.container}>
         <Text style={CardStyle.titulo}>Visitantes</Text>
-        <TouchableOpacity style={CardStyle.botao}>
+        <TouchableOpacity style={CardStyle.botao} onPress={() => goToVisit()}>
           <Text style={CardStyle.botaoLetra}>Cadastrar</Text>
         </TouchableOpacity>
       </View>
@@ -71,7 +87,7 @@ const Home = () => {
 
       <View style={CardStyle.container}>
         <Text style={CardStyle.titulo}>Funcionarios</Text>
-        <TouchableOpacity style={CardStyle.botao}>
+        <TouchableOpacity style={CardStyle.botao} onPress={() => goToEmployee()}>
           <Text style={CardStyle.botaoLetra}>Cadastrar</Text>
         </TouchableOpacity>
       </View>

@@ -3,10 +3,10 @@ import { StyleSheet } from "react-native";
 const CardStyle = StyleSheet.create({
 
   container: {
-    flex: 1,
-    padding: 10,
     backgroundColor: '#f5f5f5',
-    justifyContent: 'center',
+    marginBottom: 10,
+    padding: 10,
+    
   },
   card: {
     backgroundColor: '#fff', 
@@ -20,13 +20,11 @@ const CardStyle = StyleSheet.create({
     },
     shadowOpacity: 0.23,
     shadowRadius: 2.62,
-    elevation: 4,
-    width: width * 0.9, 
+    elevation: 4, 
   },
   titulo: {
     fontSize: 20, 
     fontWeight: 'bold',
-    marginBottom: 10, 
   },
   textoCarregando: {
     textAlign: 'center', 
@@ -39,18 +37,22 @@ const CardStyle = StyleSheet.create({
   botao: {
     height: 40,
     padding: 10,
+    paddingHorizontal: 20, // para dar espaço interno horizontal
+    paddingVertical: 10, // para dar espaço interno vertical
     backgroundColor: "#2C68F5",
     borderRadius: 5,
-    width: '80%',
+    width: '40%',
   },
   botaoLetra: {
     textAlign: "center",
     color: "#FFFFFF",
+    fontWeight: 'bold',
   },
-  botaoContainer: {
-    flexDirection: "row",
-    justifyContent: 'center',
-    alignItems: 'center',
+  container: {
+    marginTop: 10,
+    display: "flex",
+    flexDirection: "Row",
+    flexDirection: 'column',
   },
   
 });
