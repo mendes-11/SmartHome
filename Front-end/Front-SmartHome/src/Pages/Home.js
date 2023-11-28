@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { ScrollView, Text, View } from "react-native";
+import { ScrollView, Text, View, TouchableOpacity } from "react-native";
 import axios from "axios";
 import CardStyle from "../Styles/CardStyles";
 
@@ -17,9 +17,7 @@ const Home = () => {
         const resVisitantes = await axios.get("http://localhost:8080/visita");
         setVisitantes(resVisitantes.data);
 
-        const resFuncionario = await axios.get(
-          "http://localhost:8080/funcionario"
-        );
+        const resFuncionario = await axios.get("http://localhost:8080/funcionario");
         setFuncionario(resFuncionario.data);
       } catch (error) {
         console.error("Erro ao buscar dados:", error);
@@ -31,7 +29,12 @@ const Home = () => {
 
   return (
     <ScrollView style={CardStyle.container}>
-      <Text style={CardStyle.titulo}>Moradores</Text>
+      <View style={CardStyle.container}>
+        <Text style={CardStyle.titulo}>Moradores</Text>
+        <TouchableOpacity style={CardStyle.botao}>
+          <Text style={CardStyle.botaoLetra}>Cadastrar</Text>
+        </TouchableOpacity>
+      </View>
       {moradores.length > 0 ? (
         moradores.map((morador, index) => (
           <View style={CardStyle.card}>
@@ -46,7 +49,12 @@ const Home = () => {
         <Text style={CardStyle.textoCarregando}>Carregando moradores...</Text>
       )}
 
-      <Text style={CardStyle.titulo}>Visitantes</Text>
+      <View style={CardStyle.container}>
+        <Text style={CardStyle.titulo}>Visitantes</Text>
+        <TouchableOpacity style={CardStyle.botao}>
+          <Text style={CardStyle.botaoLetra}>Cadastrar</Text>
+        </TouchableOpacity>
+      </View>
       {visitantes.length > 0 ? (
         visitantes.map((visitante, index) => (
           <View style={CardStyle.card}>
@@ -61,7 +69,12 @@ const Home = () => {
         <Text style={CardStyle.textoCarregando}>Carregando visitantes...</Text>
       )}
 
-      <Text style={CardStyle.titulo}>Funcionarios</Text>
+      <View style={CardStyle.container}>
+        <Text style={CardStyle.titulo}>Funcionarios</Text>
+        <TouchableOpacity style={CardStyle.botao}>
+          <Text style={CardStyle.botaoLetra}>Cadastrar</Text>
+        </TouchableOpacity>
+      </View>
       {funcionario.length > 0 ? (
         funcionario.map((funcionario, index) => (
           <View style={CardStyle.card}>

@@ -106,7 +106,7 @@ const RegisterVisit = (props) => {
     />
   </View>
   <Button title="Cadastrar" onPress={enviarDados} />
-  <Button title="Voltar" onPress={() => props.navigation.navigate("Morador")} />
+  <Button title="Voltar" onPress={() => props.navigation.navigate("Home")} />
 </ScrollView>
 
     </KeyboardAvoidingView>

@@ -6,6 +6,7 @@ const CardStyle = StyleSheet.create({
     flex: 1,
     padding: 10,
     backgroundColor: '#f5f5f5',
+    justifyContent: 'center',
   },
   card: {
     backgroundColor: '#fff', 
@@ -19,7 +20,8 @@ const CardStyle = StyleSheet.create({
     },
     shadowOpacity: 0.23,
     shadowRadius: 2.62,
-    elevation: 4, 
+    elevation: 4,
+    width: width * 0.9, 
   },
   titulo: {
     fontSize: 20, 
@@ -33,7 +35,23 @@ const CardStyle = StyleSheet.create({
   item: {
     fontSize: 16, 
     color: '#333', 
-  }
+  },
+  botao: {
+    height: 40,
+    padding: 10,
+    backgroundColor: "#2C68F5",
+    borderRadius: 5,
+    width: '80%',
+  },
+  botaoLetra: {
+    textAlign: "center",
+    color: "#FFFFFF",
+  },
+  botaoContainer: {
+    flexDirection: "row",
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   
 });
 

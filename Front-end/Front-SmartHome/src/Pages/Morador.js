@@ -131,7 +131,7 @@ const RegisterResident = () => {
     style={CadastroStyle.input}
   />
   <Button title="Cadastrar" onPress={enviarDados} />
-  <Button title="Voltar" onPress={() => props.navigation.navigate("Visita")} />
+  <Button title="Voltar" onPress={() => props.navigation.navigate("Home")} />
 </ScrollView>
 
     </KeyboardAvoidingView>
