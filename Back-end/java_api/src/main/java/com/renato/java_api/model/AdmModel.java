@@ -17,9 +17,11 @@ public class AdmModel {
     private String cpf;
     private short bloco;
     private short apartamento;
+    private String numeroVagaEstacionamento;
+    private String senha;
 
     public AdmModel(String nome, Date dataNascimento, String sexo, String email, String cpf, 
-    short bloco, short apartamento) {
+    short bloco, short apartamento, String NumeroVagaEstacionamento, String senha) {
 
         this.nome = nome;
         this.dataNascimento = dataNascimento;
@@ -28,12 +30,26 @@ public class AdmModel {
         this.cpf = cpf;
         this.bloco = bloco;
         this.apartamento = apartamento;
-
+        this.numeroVagaEstacionamento = NumeroVagaEstacionamento;
+        this.senha = senha;
     }
+
+    public AdmModel(String nome, Date dataNascimento, String sexo, String email, String cpf) {
+
+        this.nome = nome;
+        this.dataNascimento = dataNascimento;
+        this.sexo = sexo;
+        this.email = email;
+        this.cpf = cpf;
+        this.senha = senha;
+        
+    }
+
 
     public AdmModel(String nome, String sexo){
         this.nome = nome;
         this.sexo = sexo;
+
     }
 
     public AdmModel(String IDAdm) {

@@ -18,7 +18,7 @@ import com.renato.java_api.service.AdmService;
 
 
 @RestController
-@RequestMapping("/visita")
+@RequestMapping("/adm")
 public class AdmController {
 
     @Autowired
