@@ -3,23 +3,11 @@ import { ScrollView, Text, View, TouchableOpacity } from "react-native";
 import axios from "axios";
 import CardStyle from "../Styles/CardStyles";
 
-const Home = () => {
+const Home = (props) => {
   const [moradores, setMoradores] = useState([]);
   const [visitantes, setVisitantes] = useState([]);
   const [funcionario, setFuncionario] = useState([]);
 
-  function goToResident() {
-
-    props.navigation.navigate("Morador")
-  }
-  function goToVisit() {
-
-    props.navigation.navigate("Visita")
-  }
-  function goToEmployee() {
-
-    props.navigation.navigate("Funcionario")
-  }
 
   useEffect(() => {
     const buscarDados = async () => {
@@ -46,7 +34,7 @@ const Home = () => {
 
       <View style={CardStyle.container}>
         <Text style={CardStyle.titulo}>Moradores</Text>
-        <TouchableOpacity style={CardStyle.botao} onPress={() => goToResident()}>
+        <TouchableOpacity style={CardStyle.botao} onPress={() => props.navigation.navigate("Morador")}>
           <Text style={CardStyle.botaoLetra}>Cadastrar</Text>
         </TouchableOpacity>
       </View>
@@ -67,7 +55,7 @@ const Home = () => {
 
       <View style={CardStyle.container}>
         <Text style={CardStyle.titulo}>Visitantes</Text>
-        <TouchableOpacity style={CardStyle.botao} onPress={() => goToVisit()}>
+        <TouchableOpacity style={CardStyle.botao} onPress={() => props.navigation.navigate("Visita")}>
           <Text style={CardStyle.botaoLetra}>Cadastrar</Text>
         </TouchableOpacity>
       </View>
@@ -87,7 +75,7 @@ const Home = () => {
 
       <View style={CardStyle.container}>
         <Text style={CardStyle.titulo}>Funcionarios</Text>
-        <TouchableOpacity style={CardStyle.botao} onPress={() => goToEmployee()}>
+        <TouchableOpacity style={CardStyle.botao} onPress={() => props.navigation.navigate("Funcionario")}>
           <Text style={CardStyle.botaoLetra}>Cadastrar</Text>
         </TouchableOpacity>
       </View>

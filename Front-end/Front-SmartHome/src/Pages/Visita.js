@@ -4,9 +4,10 @@ import {
   Platform,
   ScrollView,
   TextInput,
-  Button,
   Alert,
   View,
+  TouchableOpacity,
+  Text
 } from 'react-native';
 import axios from 'axios';
 import CadastroStyle from "../Styles/CadastroStyles";
@@ -105,8 +106,20 @@ const RegisterVisit = (props) => {
       style={[CadastroStyle.input, CadastroStyle.inlineInput]}
     />
   </View>
-  <Button title="Cadastrar" onPress={enviarDados} />
-  <Button title="Voltar" onPress={() => props.navigation.navigate("Home")} />
+
+  <TouchableOpacity style={CadastroStyle.botao} onPress={enviarDados}>
+          <Text style={CadastroStyle.botaoLetra}>Cadastrar</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={CadastroStyle.botao} onPress={enviarDados}>
+          <Text
+            style={CadastroStyle.botaoLetra}
+            onPress={() => props.navigation.navigate("Home")}
+          >
+            Voltar
+          </Text>
+        </TouchableOpacity>
+  
 </ScrollView>
 
     </KeyboardAvoidingView>

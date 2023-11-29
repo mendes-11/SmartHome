@@ -37,8 +37,8 @@ const CardStyle = StyleSheet.create({
   botao: {
     height: 40,
     padding: 10,
-    paddingHorizontal: 20, // para dar espaço interno horizontal
-    paddingVertical: 10, // para dar espaço interno vertical
+    paddingHorizontal: 20,
+    paddingVertical: 10,
     backgroundColor: "#2C68F5",
     borderRadius: 5,
     width: '40%',
