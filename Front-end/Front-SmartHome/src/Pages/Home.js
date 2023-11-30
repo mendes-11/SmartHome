@@ -7,6 +7,7 @@ const Home = (props) => {
   const [moradores, setMoradores] = useState([]);
   const [visitantes, setVisitantes] = useState([]);
   const [funcionario, setFuncionario] = useState([]);
+  var session = JSON.parse(sessionStorage.getItem("user"));
 
 
   useEffect(() => {

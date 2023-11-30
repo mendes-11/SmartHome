@@ -137,16 +137,12 @@ const RegisterResident = () => {
           <Text style={CadastroStyle.botaoLetra}>Cadastrar</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={CadastroStyle.botao} onPress={enviarDados}>
-          <Text
-            style={CadastroStyle.botaoLetra}
-            onPress={() => props.navigation.navigate("Home")}
-          >
-            Voltar
-          </Text>
+        <TouchableOpacity
+          style={CadastroStyle.botao}
+          onPress={() => props.navigation.navigate("Home")}
+        >
+          <Text style={CadastroStyle.botaoLetra}>Voltar</Text>
         </TouchableOpacity>
-
-
       </ScrollView>
     </KeyboardAvoidingView>
   );
